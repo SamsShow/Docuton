@@ -2,35 +2,27 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { ChevronRight, Lock, QrCode, Bell, Github, Twitter, Linkedin } from 'lucide-react'
+import Navbar from '@/app/Navbar/page'
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+
+  const handleGetStarted = () => {
+    router.push('/Verify')
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
-      <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <motion.h1 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-primary"
-        >
-          DocuTON
-        </motion.h1>
-        <nav className="space-x-4">
-          <a href="#features" className="hover:text-primary transition-colors">Features</a>
-          <a href="#" className="hover:text-primary transition-colors">Pricing</a>
-          <a href="#" className="hover:text-primary transition-colors">Contact</a>
-        </nav>
-      </header>
-
+      <Navbar />
       <main>
-        <section className="container mx-auto px-4 py-20 text-center">
+        <section className="container mx-auto px-4 py-28 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -56,6 +48,7 @@ export default function HomePage() {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-white"
+              onClick={handleGetStarted}
             >
               Get Started
             </Button>
