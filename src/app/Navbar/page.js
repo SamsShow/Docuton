@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -12,7 +14,7 @@ const Navbar = () => {
     { label: 'Home', href: '/' },
     { label: 'Features', href: '/#features' },
     { label: 'Verify', href: '/Verify' },
-    { label: 'Documents', href: '/Document' }
+    { label: 'Documents', href: '/document' }
   ];
 
   return (
