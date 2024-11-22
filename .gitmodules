@@ -1,0 +1,4 @@
+[submodule "ton_contracts"]
+	path = ton_contracts
+	url = https://github.com/sh4d0wy/DocuTon_Contracts
+	branch = main
